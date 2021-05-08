@@ -34,7 +34,7 @@ Exam #4
 
 - As has been emphasized throughout this README file, the primary limitation of the Python script (Exam_4.py) is that it is currently coded to perform the described analysis on .txt files where every line is a single string without any spaces at the end of the strings (although the newline character is allowed). An example of a legal .txt file can be found in this repository (see "strings.txt"), the format of which is visualized below:  
 
-<div style="text-align: center"> ![image](https://user-images.githubusercontent.com/44222667/117521483-09ca7200-af7c-11eb-8ca2-82a5885b622e.png)  </div>
+<div style="text-align: center"> ![image](https://user-images.githubusercontent.com/44222667/117521483-09ca7200-af7c-11eb-8ca2-82a5885b622e.png)</div>
     * Note the blank line on line 4. Failure to leave a blank line at the end of your .txt file will skew the computed linguistic complexity AND the observed/possible kmers for the last string in your file. This is because the script was constructed to expect a newline character at the end of each string. For example, the string on line 3 in the above example file ("ATCGATCG") would have its observed/possible kmers and linguistic complexity inaccurately computed if line 4 (a blank line) was not included at the end of the file.
 
 - Future versions of this script would seek to foster/guarantee compatability with alternate file types (e.g., .csv files) through conditional execution of the code based a file's file extension.
