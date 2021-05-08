@@ -1,3 +1,7 @@
-# Eiger_Exam_4
+# Michael Eiger
+# DSP439
+# Exam #4
 
-### Just a test
+# Python Script Name: Eiger_Exam_4
+
+### Q: What does this script do?
