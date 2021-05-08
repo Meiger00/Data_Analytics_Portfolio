@@ -11,8 +11,7 @@ Exam #4
   - Beyond the main() function, the above process is heavily reliant on combined use of the following functions (each of which is defined within Exam_4.py):  
       1. **count_kmers()** - This function calculates the number of observed kmers of size of a specified size (k) within a passsed string.  
                         *(NOTE: This function only calculates the OBSERVED kmers for a string, while create_df() is responsible for calculating POSSIBLE kmers)*
-      2. **create_df()** - Creates a pandas data frame containing all possible values of k relative to a passed string's length, as well as the associated number of observed and                          possible kmers for that string.  
-                      *(NOTE: POSSIBLE kmers for a string are calculated by this function)*
+      2. **create_df()** - Creates a pandas data frame containing all possible values of k relative to a passed string's length, as well as the associated number of observed                           and possible kmers for that string. *(NOTE: POSSIBLE kmers for a string are calculated by this function)*
       3. **complexity()** - Calculates the linguistic complexity of a string by dividing its number of observed kmers by its number of possible kmers.
 
 - After each string in the .txt file has been analyzed (i.e., had its linguistic complexity printed on the command line and had its corresponding data frame saved in a .csv file), the .txt file will close and the script will terminate.
