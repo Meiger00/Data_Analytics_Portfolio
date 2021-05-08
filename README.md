@@ -20,8 +20,7 @@ Exam #4
    For example:  
      * python3 Exam_4.py strings.txt
 
-   **Alternatively**, you can convert Exam_4.py to an executable file by running the following command from your terminal: chmod +x Exam_4.py  
-   
+   **Alternatively**, convert Exam_4.py to an executable file by running the following command from your terminal: chmod +x Exam_4.py  
    If you do, to run the script, you then would also be able to run the program through the following terminal command: ./Exam_4.py (name of the .txt file)  
   
    For example:  
