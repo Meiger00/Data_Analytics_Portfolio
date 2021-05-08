@@ -16,5 +16,5 @@ After each string in the .txt file has been analyzed (i.e., had its linguistic c
 To run the Python script (Exam_4.py), first relocate both the script and a .txt file where each line contains only one string to your working directory.  
 
 Next, input the following command into your terminal: python3 Exam_4.py (name of the .txt file)  
-For example, you could input the following:
+For example:  
 * python3 Exam_4.py strings.txt
