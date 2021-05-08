@@ -24,3 +24,4 @@ If you do, to run the script, you then would also be able to run the program thr
 For example:  
 * ./Exam_4.py strings.txt
 
+If you are also interested in running the adjoining Python Test script (test_Exam_4.py), relocate said file to your working directory and input the following command into your terminal: py.test
