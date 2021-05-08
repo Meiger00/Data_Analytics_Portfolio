@@ -27,8 +27,8 @@ Exam #4
      * ./Exam_4.py strings.txt
 
 3. If you are also interested in running the adjoining Python Test script (test_Exam_4.py), relocate said file to your working directory and input the following command into your terminal: py.test
-  * This command will result in an error if your working directory does not also contain Exam_4.py
-  * A .txt file containing strings is *not* required to run the Python Test script
+    * This command will result in an error if your working directory does not also contain Exam_4.py
+    * A .txt file containing strings is *not* required to run the Python Test script
 
 ## Other notes/limitations of the Python script
 
