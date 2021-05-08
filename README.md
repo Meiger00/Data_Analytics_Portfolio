@@ -1,6 +1,6 @@
-Michael Eiger
-DSP439
-Exam #4
+Michael Eiger \n
+DSP439 \n
+Exam #4 \n
 
 # Python Script Name: Eiger_Exam_4
 
