@@ -29,3 +29,7 @@ If you are also interested in running the adjoining Python Test script (test_Exa
 * A .txt file containing strings is *not* required to run the Python Test script
 
 ## Other notes/limitations of the Python script
+
+As has been emphasized throughout this README file, the primary limitation of the Python script (Exam_4.py) is that it is currently coded to perform the described analysis on .txt files where every line is a single string without any spaces at the end of the strings (although the newline character is allowed). An example of a legal .txt file can be found in this repository (see "strings.txt"), the format of which is visualized below:  
+
+Future versions of this script would seek to foster/guarantee compatability with alternate file types (e.g., .csv files) through conditional execution of the code based a file's file extension.
