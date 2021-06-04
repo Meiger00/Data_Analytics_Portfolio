@@ -1,7 +1,6 @@
 ################################################################################
-#   Michael Eiger                                                              #
-#   DSP439                                                                     #
-#   Exam #4 - PYTHON TEST SCRIPT                                               #
+#   PYTHON TEST SCRIPT                                                         #
+#   Created By: Michael Eiger                                                  #
 ################################################################################
 
 # To run this test script, input as: 
