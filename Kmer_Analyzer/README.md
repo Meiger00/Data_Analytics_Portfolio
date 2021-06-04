@@ -1,6 +1,5 @@
-Michael Eiger  
-DSP439  
-Exam #4  
+** Kmer_Analyzer **
+Created by: Michael Eiger  
 
 # Python Script Name: Exam_4.py
 
