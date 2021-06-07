@@ -16,9 +16,9 @@
 #   ./kmer_analyzer.py
 
 # Import libraries required to run this program
-import pandas as pd  # Imports data frame data structures and methods of manipulating data within them
-import parser        # Imports methods used to parse arguments passed from the command line
-import argparse      # Also imports methods used to parse arguments passed from the command line
+import pandas as pd  
+import parser        
+import argparse    
 
 # Defining the function that will count kmers of size k in a passed string
 def count_kmers(string, k):
@@ -39,33 +39,21 @@ def count_kmers(string, k):
     # to prevent illegal values/structures being passed to count_kmers(). If any 
     # of the adjoining boolean expressions evaluate to False, an assertion-based
     # error will be thrown
-    assert k <= len(string)  # Preventing the user from passing a k value greater than the length of the string
-    assert k > 0             # Preventing the user from passing a k value less than 1
-    assert len(string) > 0   # Preventing the user from passing empty strings
-    assert type(string) == str # Preventing the user from passing a value that 
-                               # is not a string as the FIRST argument in the function call
-    assert type(k) == int    # Preventing the user from passing a value that is not
-                             # an integer as the SECOND argument in the function call
+    assert k <= len(string)
+    assert k > 0
+    assert len(string) > 0
+    assert type(string) == str
+    assert type(k) == int
     
     # Creating a for loop that will iterate a number of times equal to the length
     # of a passed string (e.g., "CAT" would cause the loop to iterate 3 times because
     # len("CAT") = 3)
-        # - Each instance of string[count:k] takes an ordered set of characters from the
-        #   string starting from the index position stored in count and ending at
-        #   the index position k-1 (NOTE: the use of k in [count:k] indicates we want 
-        #   all characters BEFORE that index position)
-        # - During each iteration, if a k-length kmers is NOT in our list 
-        #   containing all observed k-length kmers AND it has a length equal 
-        #   to the value of k originally passed by the user to this function, then
-        #   add it to the last position of the list using the .append() method
-            # > If the permutation IS already in our list of observed permutations,
-            #   do not append it to the list and continue iterating
     count = 0
-    temp = k  # Because we are modifying k in the for loop, this variable will store the originally passed k value
-    observed = [] # A list that will store all of the observed kmers
+    temp = k
+    observed = []
     for i in range(len(string)):
-        if (string[count:k] not in observed) and (len(string[count:k]) == temp): # If these conditions are met
-            observed.append(string[count:k]) # Append the observed kmer to the end of the list
+        if (string[count:k] not in observed) and (len(string[count:k]) == temp):
+            observed.append(string[count:k])
         count += 1
         k += 1
     
@@ -93,9 +81,8 @@ def create_df(string):
     # to prevent illegal values/structures being passed to create_df(). If any 
     # of the adjoining boolean expressions evaluate to False, an assertion-based
     # error will be thrown
-    assert len(string) > 0   # Preventing the user from passing empty strings
-    assert type(string) == str # Preventing the user from passing a value that 
-                               # is not a string as the FIRST argument in the function call
+    assert len(string) > 0
+    assert type(string) == str
     
     # Establishing lists that will store what will eventually become the values 
     # of the respective k, observed kmers, and possible kmers columns in the pandas data frame
@@ -104,26 +91,20 @@ def create_df(string):
     possible = []
     
     # Creating a for loop that will iteratively determine the observed kmer and possible kmer
-    # for each k value relative to the passed string. Specifically, during each iteration:
-        # - Append the current value of k (using .append()) to the list storing all k values
-        # - Append the number of observed kmers for the current value of k (as determined
-        #   by calling count_kmers()) to the list storing the number of observed kmers
-        # - Append the number of possible kmers for the current value of k (as determined
-        #   by calling count_kmers()) to the list storing the number of possible kmers
+    # for each k value relative to the passed string.
     for i in range(1,len(string)+1): 
-        k.append(i) # Appending current value of k
-        observed.append(count_kmers(string, i)) # Appending observed kmers relative to k
+        k.append(i)
+        observed.append(count_kmers(string, i))
         
         # To determine the number of possible kmers for the given string, we establish 
         # the minimum value between (1) the length of the string - k + 1 versus (2) 4^k
-        if ((len(string) - i + 1) <= 4**i): # If minimum is length of the string - k + 1
-            possible.append(len(string) - i + 1) # Append length of the string - k + 1 as the number of possible kmers to our list 
-        else:           
-            possible.append(4**i) # Else, append 4^k as the number of possible kmers to our list
+        if ((len(string) - i + 1) <= 4**i):
+            possible.append(len(string) - i + 1)
+        else:
+            possible.append(4**i)
     
     # Establishing a dictionary that will serve as the data used to construct the
     # pandas data frame
-        # - Creating three columns: One for each of our lists created above
     df = {'k': k, 'Observed kmers': observed, "Possible kmers": possible}
     
     # Creating the pandas data frame using the dictionary
@@ -155,18 +136,15 @@ def complexity(df):
     # to prevent illegal values/structures being passed to complexity(). If any 
     # of the adjoining boolean expressions evaluate to False, an assertion-based
     # error will be thrown
-    assert type(df) == pd.core.frame.DataFrame # Preventing the user from passing non-data frame objects
-    assert df.columns[1] == "Observed kmers"   # Ensures that the "Observed kmers" column is indexed as expected
-    assert df.columns[2] == "Possible kmers"   # Ensures that the "Possible kmers" column is indexed as expected
+    assert type(df) == pd.core.frame.DataFrame
+    assert df.columns[1] == "Observed kmers"
+    assert df.columns[2] == "Possible kmers"
     
     # Creating a pandas Series that will store both the sum of all observed kmers and possible kmers,
     # respectively, from the passed data frame
-        # - The .sum() method adds together each value in the specified column
-    sums = df.sum(axis = 0)[1:3] # Using column-wise indices (i.e., axis = 0), desired values are in the data frame's 1st and 2nd index position
+    sums = df.sum(axis = 0)[1:3]
     
     # Linguistic complexity = Number of observed kmers/Number of possible kmbers
-        # - Number of observed kmers are stored within the 0th index position of the Series
-        # - Number of possible kmers are stored within the 1st index position of the Series
     complexity = sums[0]/sums[1]
     
     # Returning the value representing linguistic complexity to the outside of the function
@@ -193,7 +171,6 @@ def main(args):
     assert args.file.endswith(".txt") == True
     
     # Open the file originally declared by the user as a command line argument
-        # - open() will open the "file" argument in a read-only state (indicated by "r")
     string = open(args.file, "r")
     
     # For each string in the file
@@ -203,19 +180,15 @@ def main(args):
         print("String: " + str(j))
         
         # Create a pandas data frame using the current string, making sure to prevent each line's newline character from being analyzed too
-        df = create_df(j[0:len(j)-1]) # Setting len(j) - 1 as the end index will prevent the newline character from being regarded as a character in the string
+        df = create_df(j[0:len(j)-1])
         
         # Printing the linguistic complexity of the current string to the command line
-            # - str() converts its arguments to strings
-            # - complexity() is called here to calculate the linguistic complexity for the current iteration's string
         print("Calculated Linguistic Complexity for " + str(j[0:len(j)-1]) + ": " + str(complexity(df)))
         
         # Printing the name of the .csv file that will store the pandas data frame to the command line
         print("The data frame depicting k-mers for this string has been saved to the following file: " + str(j[0:len(j)-1]) + ".csv")
         
         # Creating the .csv file based on the content of the pandas data frame
-            # - .to_csv() is a pandas method that outputs a data frame to a .csv file
-                # > The index=False argument prevents the data frame's indices from being included in the .csv file
         df.to_csv(str(j[0:len(j)-1]) + ".csv",index=False)
         
         # Printing an empty line to the command line to improve readability
@@ -227,9 +200,9 @@ def main(args):
     # Return nothing to the outside of the function
     return
 
-# If we are running the main program:
+# If we are running the main program, parse out the name of the file containing the strings
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()      # Initialize the parser
-    parser.add_argument('file', type = str) # Pass one argument (called 'file') to "args"
-    args = parser.parse_args()              # Parse the passed argument
-    main(args)                              # Pass the parsed argument to main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('file', type = str)
+    args = parser.parse_args()
+    main(args)
