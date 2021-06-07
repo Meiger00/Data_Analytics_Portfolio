@@ -6,13 +6,13 @@
 # To run this test script, input as: 
 # py.test
 
-# Import all of the functions (indicated by "*") from the specified .py program (i.e., Exam_4.py)
-from Exam_4 import *
+# Import all of the functions (indicated by "*") from the specified .py program (i.e., kmer_analyzer.py)
+from kmer_analyzer import *
 
-# Defines a function that tests the count_kmers() function from Exam_4.py
+# Defines a function that tests the count_kmers() function from kmer_analyzer.py
 def test_count_kmers():
   '''
-  Performs unit testing using the count_kmers() function from Exam_4.py. If all 
+  Performs unit testing using the count_kmers() function from kmer_analyzer.py. If all 
   tests are passed, this function will resolve without errors. If a test is NOT 
   passed, this function will throw an assertion error, indicating that the obtained
   value (i.e., the calculated number of observed kmers in a given string) exhibits
@@ -52,7 +52,7 @@ def test_count_kmers():
       #   string and consider it as the "actual result"
       # - If the "actual result" does not match the"expected result", return 
       #   an assertion-based error (which means that the test failed and we likely
-      #   need to modify this function in Exam_4.py)
+      #   need to modify this function in kmer_analyzer.py)
   count = 0
   for k in k_list:
     actual_result = count_kmers(string,k)
@@ -86,7 +86,7 @@ def test_count_kmers():
       #   string and consider it as the "actual result"
       # - If the "actual result" does not match the"expected result", return 
       #   an assertion-based error (which means that the test failed and we likely
-      #   need to modify this function in Exam_4.py)
+      #   need to modify this function in kmer_analyzer.py)
   count = 0
   for k in k_list:
     actual_result = count_kmers(string,k)
@@ -121,7 +121,7 @@ def test_count_kmers():
       #   string and consider it as the "actual result"
       # - If the "actual result" does not match the "expected result", return 
       #   an assertion-based error (which means that the test failed and we likely
-      #   need to modify this function in Exam_4.py)
+      #   need to modify this function in kmer_analyzer.py)
   count = 0
   for k in k_list:
     actual_result = count_kmers(string,k)
@@ -129,10 +129,10 @@ def test_count_kmers():
     count += 1
     assert actual_result == expected_result
 
-# Defines a function that tests the create_df() function from Exam_4.py
+# Defines a function that tests the create_df() function from kmer_analyzer.py
 def test_create_df():
   '''
-  Performs unit testing using the create_df() function from Exam_4.py. If all 
+  Performs unit testing using the create_df() function from kmer_analyzer.py. If all 
   tests are passed, this function will resolve without errors. If a test is NOT 
   passed, this function will throw an assertion error, indicating that the obtained
   value (i.e., the calculated number of observed kmers in a given string) exhibits
@@ -177,7 +177,7 @@ def test_create_df():
       #   in the respective "actual" versus "expected" k-value lists. If an 
       #   "actual result" does not match an "expected result", return an 
       #   assertion-based error (which means that the test failed and we likely
-      #   need to modify this function in Exam_4.py). Otherwise, continue iterating.
+      #   need to modify this function in kmer_analyzer.py). Otherwise, continue iterating.
   count = 0
   for k in act_k_list:
     actual_result = act_k_list[count]   # The actual k-value
@@ -208,7 +208,7 @@ def test_create_df():
       #   in the respective "actual" versus "expected" observed kmer value lists. If 
       #   an "actual result" does not match an "expected result", return an 
       #   assertion-based error (which means that the test failed and we likely
-      #   need to modify this function in Exam_4.py). Otherwise, continue iterating.
+      #   need to modify this function in kmer_analyzer.py). Otherwise, continue iterating.
   count = 0
   for k in act_obv_list:
     actual_result = act_obv_list[count]   # The actual k-value
@@ -239,7 +239,7 @@ def test_create_df():
       #   in the respective "actual" versus "expected" possible kmer value lists. If 
       #   an "actual result" does not match an "expected result", return an 
       #   assertion-based error (which means that the test failed and we likely
-      #   need to modify this function in Exam_4.py). Otherwise, continue iterating.
+      #   need to modify this function in kmer_analyzer.py). Otherwise, continue iterating.
   count = 0
   for k in act_pos_list:
     actual_result = act_pos_list[count]   # The actual k-value
@@ -247,10 +247,10 @@ def test_create_df():
     count += 1
     assert actual_result == expected_result # If True, continue iterating. Else, test failed.
 
-# Defines a function that tests the complexity() function from Exam_4.py
+# Defines a function that tests the complexity() function from kmer_analyzer.py
 def test_complexity():
   '''
-  Performs unit testing using the complexity() function from Exam_4.py. If all 
+  Performs unit testing using the complexity() function from kmer_analyzer.py. If all 
   tests are passed, this function will resolve without errors. If a test is NOT 
   passed, this function will throw an assertion error, indicating that the 
   obtained value (i.e., the calculated linguistic complexity of a given string) 
@@ -285,7 +285,7 @@ def test_complexity():
       #   stored within our incrementing variable
       # - If the "actual result" does not match the"expected result", return 
       #   an assertion-based error (which means that the test failed and we likely
-      #   need to modify this function in Exam_4.py)
+      #   need to modify this function in kmer_analyzer.py)
   count = 0
   for string in string_list:
     df = create_df(string)  # Create the df from the passed string and store it
