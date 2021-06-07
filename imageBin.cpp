@@ -42,8 +42,8 @@ int main(int argc, char *argv[]) {
     glob_mean = glob_mean/((height*width)*3);
 
     // Perform binarization by comparing a pixel's mean density to the global threshold
-		// If a pixel's mean density is GREATER THAN the global threshold, set the pixel to White
-		// If a pixel's mean density is LESS THAN the global threshold, set the pixel to Black
+	// If a pixel's mean density is GREATER THAN the global threshold, set the pixel to White
+	// If a pixel's mean density is LESS THAN the global threshold, set the pixel to Black
     for (int i = 0; i < height; i++){
         for (int j = 0; j < width; j++){
             int local_mean = 0;
