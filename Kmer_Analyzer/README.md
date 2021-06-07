@@ -23,8 +23,8 @@ Created by: Michael Eiger
    For example:  
      * python3 kmer_analyzer.py strings.txt
 
-   **Alternatively**, convert kmer_analyzer.py to an executable file by running the following command from your terminal: chmod +x kmer_analyzer.py  
-   If you do convert it an executable file, to run the script, you then would also be able to run the program through the following terminal command:  ./kmer_analyzer.py (name of the .txt file)  
+   **Alternatively**, convert kmer_analyzer.py to an executable file by running the following command from your terminal:  chmod +x kmer_analyzer.py  
+   If you do convert it an executable file, to run the script, you then would also be able to run the program through the following terminal command: ./kmer_analyzer.py (name of the .txt file)  
   
    For example:  
      * ./kmer_analyzer.py strings.txt
