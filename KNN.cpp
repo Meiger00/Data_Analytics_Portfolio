@@ -9,7 +9,7 @@
 double euclidean(double x1, double y1, double x2, double y2){
     double distance;
     distance = sqrt(pow((x1 - x2),2) + pow((y1 - y2),2));
-    return floor(distance); // May need to remove the call to floor() since we're working with doubles
+    return floor(distance);
 }
 
 int main(){
