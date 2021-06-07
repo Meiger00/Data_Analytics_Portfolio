@@ -1,4 +1,4 @@
-// K-Nearest Neighbors
+// K-Nearest Neighbors Algorithm
 // Created By: Michael Eiger
 
 // Import the necessary libraries
