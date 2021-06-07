@@ -2,19 +2,18 @@
 
 ################################################################################
 #   Michael Eiger                                                              #
-#   DSP439                                                                     #
-#   Exam #4 - PYTHON SCRIPT                                                    #
+#   kmer_analyzer - PYTHON SCRIPT                                              #
 ################################################################################
 
 # To run this script in your terminal, first place this file and the .txt file 
 # containing the strings you want to analyze in your working directory. 
 # Then input one of the following commands in your terminal:
-#   python3 Exam_4.py
+#   python3 kmer_analyzer.py
 #
 #   OR
 #
-#   chmod +x Exam_4.py <-- (Converts the .py file to an executable, then you run it)
-#   ./Exam_4.py
+#   chmod +x kmer_analyzer.py <-- (Converts the .py file to an executable, then you run it)
+#   ./kmer_analyzer.py
 
 # Import libraries required to run this program
 import pandas as pd  # Imports data frame data structures and methods of manipulating data within them
