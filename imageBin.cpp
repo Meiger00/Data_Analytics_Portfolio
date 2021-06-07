@@ -2,7 +2,7 @@
 // Created By: Michael Eiger
 
 // TO TEST THIS PROGRAM LOCALLY AFTER COMPILATION, RUN THE FOLLOWING COMMAND:
-// ./imageBin image.bmp binarized-image.bmp
+// ./imageBin (name of the .bmp image to binarize) (name to be given to the output .bmp image)
 
 // NOTE: This program has a notable dependency: the "bitmap_image" library, created by Arash Partow.
 // The bitmap_image library is downloadable from the following link: https://www.partow.net/programming/bitmap/index.html
