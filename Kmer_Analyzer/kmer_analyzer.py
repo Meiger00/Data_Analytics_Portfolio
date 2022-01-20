@@ -171,31 +171,31 @@ def main(args):
     assert args.file.endswith(".txt") == True
     
     # Open the file originally declared by the user as a command line argument
-    string = open(args.file, "r")
+    strings = open(args.file, "r")
     
     # For each string in the file
-    for j in string:
+    for string in strings:
         
         # Print the name of the string to the command line
-        print("String: " + str(j))
+        print("String: " + str(string))
         
         # Create a pandas data frame using the current string, making sure to prevent each line's newline character from being analyzed too
-        df = create_df(j[0:len(j)-1])
+        df = create_df(j[0:len(string)-1])
         
         # Printing the linguistic complexity of the current string to the command line
-        print("Calculated Linguistic Complexity for " + str(j[0:len(j)-1]) + ": " + str(complexity(df)))
+        print("Calculated Linguistic Complexity for " + str(string[0:len(string)-1]) + ": " + str(complexity(df)))
         
         # Printing the name of the .csv file that will store the pandas data frame to the command line
-        print("The data frame depicting k-mers for this string has been saved to the following file: " + str(j[0:len(j)-1]) + ".csv")
+        print("The data frame depicting k-mers for this string has been saved to the following file: " + str(string[0:len(string)-1]) + ".csv")
         
         # Creating the .csv file based on the content of the pandas data frame
-        df.to_csv(str(j[0:len(j)-1]) + ".csv",index=False)
+        df.to_csv(str(string[0:len(string)-1]) + ".csv",index=False)
         
         # Printing an empty line to the command line to improve readability
         print("")
     
     # Close the file containing the strings to prevent errors
-    string.close()
+    strings.close()
     
     # Return nothing to the outside of the function
     return
