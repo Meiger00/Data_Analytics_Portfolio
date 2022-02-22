@@ -180,7 +180,7 @@ def main(args):
         print("String: " + str(string))
         
         # Create a pandas data frame using the current string, making sure to prevent each line's newline character from being analyzed too
-        df = create_df(j[0:len(string)-1])
+        df = create_df(string[0:len(string)-1])
         
         # Printing the linguistic complexity of the current string to the command line
         print("Calculated Linguistic Complexity for " + str(string[0:len(string)-1]) + ": " + str(complexity(df)))
